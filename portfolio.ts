@@ -18,12 +18,16 @@ export interface Project {
     };
 }
 
-const API_BASE_URL = 'https://api.lagostechboy.com/wp-json';
+const API_BASE_URL = import.meta.env.VITE_WP_API_URL;
+if (!API_BASE_URL) {
+  console.error("VITE_WP_API_URL is not defined in your environment file. Please add it to your .env file.");
+  document.body.innerHTML = '<div style="color: red; text-align: center; padding-top: 50px; font-family: sans-serif;"><h1>Configuration Error</h1><p>The WordPress API URL is not configured. Please contact the site administrator.</p></div>';
+}
 
 /**
  * Fetches project data from the WordPress REST API.
  * @returns A promise that resolves to an array of Project objects.
- */
+ **/
 export async function fetchProjects(): Promise<Project[]> {
     try {
         // Use _embed to include featured image data in the same request

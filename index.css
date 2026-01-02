@@ -261,7 +261,7 @@ html[data-theme='dark'] .tech-item {
 .project-card:hover, .project-card:focus-visible {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg), 0 0 50px var(--accent-glow);
-    outline: 2px solid var(--accent);
+    outline: 1px var(--accent);
     outline-offset: 4px;
 }
 .card-image-wrapper { aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid var(--border); }
