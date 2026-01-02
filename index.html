@@ -99,6 +99,12 @@
         .btn-outline:hover { border-color: var(--text-primary); transform: translateY(-2px); }
         .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
         .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .project-modal {
+            position: fixed; inset: 0; z-index: 2000; display: flex; align-items: center; justify-content: center;
+            padding: 1rem; opacity: 0; visibility: hidden; pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s;
+        }
+        .project-modal.visible { opacity: 1; visibility: visible; pointer-events: auto; }
         @media (min-width: 768px) {
             :root { --header-height: 80px; }
             .container { padding: 0 2rem; }

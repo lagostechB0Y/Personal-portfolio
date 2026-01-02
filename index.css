@@ -402,7 +402,7 @@ html[data-theme='dark'] .moon-icon {
     opacity: 1;
 }
 
-/* --- Project Modal --- */
+/* --- Project Modal --- * the section has been moved into index.html for (FUOC) purposes
 .project-modal {
     position: fixed;
     inset: 0;
@@ -421,6 +421,7 @@ html[data-theme='dark'] .moon-icon {
     visibility: visible;
     pointer-events: auto;
 }
+    */
 .modal-backdrop {
     position: fixed;
     inset: 0;
