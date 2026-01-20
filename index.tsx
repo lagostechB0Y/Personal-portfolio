@@ -21,9 +21,9 @@ interface Profile {
 const PROFILE_DATA: Profile = {
     name: 'Abiodun Adeniji (LagosTechBoy)',
     bioHtml: `
-        <p>I’m Abiodun Adeniji (LagosTechBoy), a Senior Software Engineer building Laravel backends and headless web architectures that scale, perform, and survive real-world traffic.</p>
-        <p>With 4 years of professional experience, I deliver robust backend systems, seamless frontend integration, and maintainable code for growing businesses and modern web products.</p>
-        <p><strong>PHP • Laravel • React • WordPress(Headless) • API Design</strong></p>
+        <p>I’m Abiodun Adeniji (LagosTechBoy), a Software Engineer focused on building robust WordPress plugins, Laravel backends, and headless web architectures that scale, perform, and hold up in real production environments.</p>
+        <p>With 4+ years of professional experience, I design and ship maintainable systems — from WordPress core extensions (plugins, custom workflows, APIs) to backend services that power modern, multi-author and content-driven platforms.</p>
+        <p><strong>PHP • WordPress (Plugins, Core, Headless) • Laravel • API Design • React</strong></p>
         <p>Outside of coding, I explore tech trends, contribute to open-source, and constantly tinker with new tools and frameworks.</p>
     `,
     image: 'https://api.lagostechboy.com/wp-content/uploads/2025/11/ade-3.jpeg'
