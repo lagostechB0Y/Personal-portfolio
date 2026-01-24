@@ -39,19 +39,17 @@ export async function fetchProjects(): Promise<Project[]> {
         
         // Map the raw API data to the cleaner Project interface
         return rawProjects.map((project: any): Project => {
-            const shortDesc = project.excerpt?.rendered
-                .replace(/<p>|<\/p>/g, '') // Remove paragraph tags from excerpt
-                .trim() || '';
-
-            // A fallback image in case one isn't set in WordPress
+            // Use ACF short_description for card, ACF description for modal, stack as in old portfolio
+            const shortDesc = project.acf?.short_description || project.excerpt?.rendered?.replace(/<[^>]*>?/gm, '').trim() || '';
+            const fullDesc = project.acf?.description || project.content?.rendered || '<p>No description available.</p>';
+            const stackArr = project.acf?.stack ? project.acf.stack.split(',').map((s: string) => s.trim()) : [];
             const fallbackImage = 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1000&auto=format&fit=crop';
-
             return {
                 id: project.id,
                 title: project.title?.rendered || 'Untitled Project',
                 shortDescription: shortDesc,
-                fullDescription: project.content?.rendered || '<p>No description available.</p>',
-                stack: project.acf?.stack ? project.acf.stack.split(',').map((s: string) => s.trim()) : [],
+                fullDescription: fullDesc,
+                stack: stackArr,
                 image: project._embedded?.['wp:featuredmedia']?.[0]?.source_url || fallbackImage,
                 links: {
                     live: project.acf?.live_url || '',
