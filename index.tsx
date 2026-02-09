@@ -22,7 +22,6 @@ const PROFILE_DATA: Profile = {
     name: 'Abiodun Adeniji (LagosTechBoy)',
     bioHtml: `
         <p>I help teams build scalable WordPress and Laravel systems that don’t break in production.</p>
-        <p>I’m Abiodun Adeniji (LagosTechBoy), a software engineer with 4+ years of experience building web applications, custom websites, and backend systems using WordPress, Laravel, and APIs.</p>
         <p><strong>PHP • WordPress (Plugins, Core, Headless) • Laravel • API Design • React</strong></p>
     `,
     image: 'https://api.lagostechboy.com/wp-content/uploads/2025/11/ade-3.jpeg'
