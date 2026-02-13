@@ -7,79 +7,69 @@
     <meta name="description" content="Abiodun Adeniji (LagosTechBoy) is a Software Engineer focused on building practical, high-performance, and scalable web systems. He works primarily with PHP (Laravel), WordPress, and headless architectures, developing custom plugins, themes, full-featured web applications, and MVPs. He bridge the gap between business needs and technical execution, building systems that perform, scale, and last."/>
 
     
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "WebSite",
-                "@id": "https://lagostechboy.com/#website",
-                "url": "https://lagostechboy.com/",
-                "name": "LagosTechBoy | Modern Web Architect",
-                "publisher": {
-                    "@id": "https://lagostechboy.com/#person"
-                }
-            },
-            {
-                "@type": "Person",
-                "@id": "https://lagostechboy.com/#person",
-                "name": "Abiodun Adeniji",
-                "alternateName": "LagosTechBoy",
-                "url": "https://lagostechboy.com/",
-                "jobTitle": "Software Engineer",
-                "worksFor": {
-                    "@type": "Organization",
-                    "name": "Everden Technologies Ltd"
-                },
-                "sameAs": [
-                    "https://github.com/lagostechB0Y",
-                    "https://linkedin.com/in/techboyade",
-                    "https://x.com/lagostechboy",
-                    "https://facebook.com/lagos.techboy",
-                    "https://medium.com/@lagostechboy"
-                ],
-                "image": "https://api.lagostechboy.com/wp-content/uploads/2025/11/ade-3.jpeg",
-                "description": "I’m Abiodun Adeniji (LagosTechBoy), a Software Engineer focused on building robust WordPress plugins, Laravel backends, and headless web architectures that scale, perform, and hold up in real production environments.",
-                "knowsAbout": [
-                    "PHP",
-                    "Laravel",
-                    "WordPress",
-                    "Headless CMS",
-                    "Plugin Development",
-                    "Theme Development",
-                    "Web Architecture",
-                    "API Development",
-                    "DevOps",
-                    "Cloud Infrastructure",
-                    "JavaScript",
-                    "React",
-                    "Next.js"
-                ],
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": "https://lagostechboy.com/"
-                },
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Lagos",
-                    "addressCountry": "Nigeria"
-                }
+   <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://lagostechboy.com/#website",
+            "url": "https://lagostechboy.com/",
+            "name": "LagosTechBoy | Modern Web Architect",
+            "publisher": {
+                "@id": "https://lagostechboy.com/#person"
             }
-        ]
-    }
-    </script>
-
+        },
+        {
+            "@type": "Person",
+            "@id": "https://lagostechboy.com/#person",
+            "name": "Abiodun Adeniji",
+            "alternateName": "LagosTechBoy",
+            "url": "https://lagostechboy.com/about",
+            "jobTitle": "Software Engineer",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Everden Technologies Ltd"
+            },
+            "sameAs": [
+                "https://profiles.wordpress.org/classic40/",
+                "https://github.com/lagostechB0Y",
+                "https://linkedin.com/in/techboyade",
+                "https://x.com/lagostechboy",
+                "https://facebook.com/lagos.techboy",
+                "https://medium.com/@lagostechboy"
+            ],
+            "image": "https://gravatar.com/avatar/390bc8cfcc0589c87ec66323c5b99e097bbc0e57207a88fec9d7f3cbe97aa384?v=1770447905000&size=256&d=initials",
+            "description": "I’m Abiodun Adeniji (LagosTechBoy), a Software Engineer focused on building robust WordPress plugins, Laravel backends, and headless web architectures.",
+            "knowsAbout": [
+                "PHP", "Laravel", "WordPress", "Headless CMS", "Plugin Development", 
+                "Theme Development", "Web Architecture", "API Development", 
+                "DevOps", "Cloud Infrastructure", "JavaScript", "React", "Next.js"
+            ],
+            "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://lagostechboy.com/about"
+            },
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Lagos",
+                "addressCountry": "Nigeria"
+            }
+        }
+    ]
+}
+</script>
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Abiodun Adeniji (LagosTechBoy) | Software Engineer" />
     <meta property="og:description" content="Software Engineer focused on building robust WordPress plugins, Laravel backends, and headless web architectures that scale, perform, and hold up in real production environments." />
     <meta property="og:url" content="https://lagostechboy.com/" />
-    <meta property="og:image" content="https://api.lagostechboy.com/wp-content/uploads/2025/11/ade-3.jpeg" />
+    <meta property="og:image" content="https://gravatar.com/avatar/390bc8cfcc0589c87ec66323c5b99e097bbc0e57207a88fec9d7f3cbe97aa384?v=1770447905000&size=256&d=initials" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Abiodun Adeniji (LagosTechBoy)" />
     <meta name="twitter:description" content="Software Engineer focused on building robust WordPress plugins, Laravel backends, and headless web architectures that scale, perform, and hold up in real production environments." />
-    <meta name="twitter:image" content="https://api.lagostechboy.com/wp-content/uploads/2025/11/ade-3.jpeg" />
+    <meta name="twitter:image" content="https://gravatar.com/avatar/390bc8cfcc0589c87ec66323c5b99e097bbc0e57207a88fec9d7f3cbe97aa384?v=1770447905000&size=256&d=initials" />
 
 
     <!-- Font Performance Optimization -->
@@ -87,6 +77,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="canonical" href="https://lagostechboy.com/" />
 
+    <!-- Client-side fallback: if the server serves the homepage at /about, immediately redirect to /about.html -->
+    <script>if (location.pathname === '/about' || location.pathname === '/about/') location.replace('/about.html' + location.search + location.hash);</script>
 
     <!-- Critical CSS for Above-the-Fold Content -->
     <style>
@@ -152,6 +144,23 @@
             padding: 1rem; opacity: 0; visibility: hidden; pointer-events: none;
             transition: opacity 0.3s ease, visibility 0.3s;
         }
+        .nav-guider-element {
+            position: absolute;
+            height: 34px; /* Adjust based on your nav height */
+            background: rgba(34, 197, 94, 0.1); /* Subtle green tint */
+            border: 1px solid #22c55e;
+            border-radius: 6px;
+            z-index: 0;
+            pointer-events: none; /* User can still click through it */
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: guider-blink 1s infinite alternate;
+        }
+
+        @keyframes guider-blink {
+            from { border-color: rgba(34, 197, 94, 0.3); }
+            to { border-color: rgba(34, 197, 94, 1); }
+        }
         .project-modal.visible { opacity: 1; visibility: visible; pointer-events: auto; }
         @media (min-width: 768px) {
             :root { --header-height: 80px; }
@@ -167,6 +176,39 @@
         }
         @media (min-width: 1024px) {
             .nav-links { gap: 2rem; }
+        }
+        /* Compact inline About snippet (homepage) */
+        .about-snippet-section { padding: 2rem 0; }
+        .about-snippet { display: flex; justify-content: center; }
+        .about-snippet .compact-card {
+            max-width: 760px; width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+            text-align: center;
+            padding: 12px 16px;
+            border-radius: 12px; border: 1px solid var(--border); background: var(--bg-card);
+            box-shadow: 0 6px 18px rgba(2,6,23,0.04);
+        }
+        .about-snippet .about-snippet-avatar {
+            width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 2px solid #22c55e; display: block; margin: 0 auto;
+        }
+        .about-snippet .about-snippet-body { display: flex; flex-direction: column; gap: 0.5rem; align-items: center; }
+        .about-snippet .compact-card h3 { margin: 0 0 0.4rem; }
+        .about-snippet .compact-card p { color: var(--text-secondary); margin: 0; font-size: 0.98rem; max-width: 48ch; }
+        .about-snippet .compact-card .btn.small { padding: 0.38rem 0.8rem; font-size: 0.85rem; }
+
+        @media (min-width: 768px) {
+            .about-snippet-section { padding: 2.5rem 0; }
+            .about-snippet .compact-card {
+                grid-template-columns: auto 1fr;
+                gap: 1.25rem;
+                text-align: left;
+                align-items: center;
+                padding: 16px 20px;
+            }
+            .about-snippet .about-snippet-avatar { width: 120px; height: 120px; margin: 0; }
+            .about-snippet .about-snippet-body { align-items: flex-start; }
         }
     </style>
 
@@ -199,7 +241,7 @@
                 <nav class="nav-links">
                     <a href="/#services" class="nav-link">Expertise</a>
                     <a href="/#work" class="nav-link">Work</a>
-                    <a href="/#about" class="nav-link">About</a>
+                    <a href="/about" class="nav-link">About</a>
                     <a href="/#contact" class="nav-link">Contact</a>
                     <a href="mailto:hello@lagostechboy.com" class="cta-link">Start Project</a>
                 </nav>
@@ -342,31 +384,15 @@
             </div>
         </section>
 
-        <!-- About -->
-        <section id="about" class="about-section">
+        <section id="about-snippet" class="about-snippet-section">
             <div class="container">
-                <div class="about-content-wrapper fade-in">
-                    <div class="about-avatar">
-                        <div class="avatar-frame">
-                            <img src="https://api.lagostechboy.com/wp-content/uploads/2025/11/ade-3.jpeg" alt="Headshot of LagosTechBoy">
-                        </div>
-                    </div>
-                    <div class="about-text">
-                        <span class="section-subtitle">The Engineer</span>
-                        <h2 class="section-title" style="margin-bottom: 1.5rem;">Obsessed with performance.</h2>
-                        <div id="bio-content">
-                            <!-- Bio Injected -->
-                        </div>
-                        <div class="social-links" id="about-socials">
-                            <a href="https://x.com/lagostechboy" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="View X.com Profile">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
-                                <span>X.com</span>
-                            </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline" aria-label="View Facebook Profile">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691V11.01h3.13V8.309c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.796.715-1.796 1.764v2.314h3.587l-.467 3.696h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z"/></svg>
-                                <span>Facebook</span>
-                            </a>
-
+                <div class="about-snippet fade-in">
+                    <div class="compact-card">
+                        <img class="about-snippet-avatar" src="https://api.lagostechboy.com/wp-content/uploads/2025/11/ade-3.jpeg" alt="Abiodun Adeniji" width="120" height="120" loading="eager" fetchpriority="high">
+                        <div class="about-snippet-body">
+                            <h3 class="section-subtitle">About</h3>
+                            <p id="about-short">I help teams build scalable WordPress &amp; Laravel systems that don’t break in production.</p>
+                            <a href="/about" class="btn btn-outline small" aria-label="Read full about page">Read full bio →</a>
                         </div>
                     </div>
                 </div>

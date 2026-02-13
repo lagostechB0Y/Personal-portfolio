@@ -20,8 +20,10 @@ export interface Project {
 
 const API_BASE_URL = import.meta.env.VITE_WP_API_URL;
 if (!API_BASE_URL) {
-  console.error("VITE_WP_API_URL is not defined in your environment file. Please add it to your .env file.");
-  document.body.innerHTML = '<div style="color: red; text-align: center; padding-top: 50px; font-family: sans-serif;"><h1>Configuration Error</h1><p>The WordPress API URL is not configured. Please contact the site administrator.</p></div>';
+  // Non-destructive failure mode: report to console and allow the site to render.
+  console.error("VITE_WP_API_URL is not defined in your environment file. Projects will be disabled. Add VITE_WP_API_URL to your .env for project data to load.");
+  // fetchProjects() already returns an empty array on network/error failures,
+  // so we avoid overwriting document.body here to prevent blank pages during dev.
 }
 
 /**

@@ -17,23 +17,14 @@ interface Profile {
     image: string;
 }
 
-// --- STATIC DATA ---
-const PROFILE_DATA: Profile = {
-    name: 'Abiodun Adeniji (LagosTechBoy)',
-    bioHtml: `
-        <p>I help teams build scalable WordPress and Laravel systems that don’t break in production.</p>
-        <p><strong>PHP • WordPress (Plugins, Core, Headless) • Laravel • API Design • React</strong></p>
-    `,
-    image: 'https://api.lagostechboy.com/wp-content/uploads/2025/11/ade-3.jpeg'
-};
 
 // --- THEME TOGGLE LOGIC ---
 const initThemeToggle = () => {
     const themeToggleBtn = document.getElementById('theme-toggle');
     const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
-    
+
     const getCurrentTheme = () => localStorage.getItem('theme');
-    
+
     const applyTheme = (theme: string | null) => {
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
@@ -54,7 +45,7 @@ const initThemeToggle = () => {
         themeToggleBtn.addEventListener('click', () => {
             const currentTheme = document.documentElement.hasAttribute('data-theme') ? 'dark' : 'light';
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
+
             localStorage.setItem('theme', newTheme);
             applyTheme(newTheme);
         });
@@ -68,12 +59,23 @@ const initThemeToggle = () => {
     });
 };
 
+// --- About renderer (missing in the repo) ---
+// Provide a safe, idempotent implementation so calls to `renderAbout()` don't throw.
+const renderAbout = () => {
+    // Populate the small about snippet on the homepage if present
+    const shortEl = document.getElementById('about-short');
+    if (shortEl && shortEl.textContent?.trim().length === 0) {
+        shortEl.textContent = "I help teams build scalable WordPress & Laravel systems that don’t break in production.";
+    }
+
+    // No-op for the full /about page — content there is server-rendered in HTML.
+};
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
     // Selectors
     const projectsGridEl = document.querySelector('.projects-grid') as HTMLElement;
-    const aboutSectionEl = document.querySelector('.about-section');
     const header = document.querySelector('.site-header') as HTMLElement;
     const workSection = document.getElementById('work');
 
@@ -161,18 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = createProjectCard(project);
             projectsGridEl.appendChild(card);
         });
-    };
-
-    const renderAbout = () => {
-        if (!aboutSectionEl) return;
-
-        const bioEl = document.getElementById('bio-content');
-        if(bioEl) bioEl.innerHTML = PROFILE_DATA.bioHtml;
-
-        const avatarImg = aboutSectionEl.querySelector('.about-avatar img') as HTMLImageElement;
-        if (avatarImg) {
-            avatarImg.src = PROFILE_DATA.image;
-        }
     };
 
     // --- Init ---
