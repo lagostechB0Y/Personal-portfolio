@@ -45,7 +45,7 @@ export async function fetchProjects(): Promise<Project[]> {
             const shortDesc = project.acf?.short_description || project.excerpt?.rendered?.replace(/<[^>]*>?/gm, '').trim() || '';
             const fullDesc = project.acf?.description || project.content?.rendered || '<p>No description available.</p>';
             const stackArr = project.acf?.stack ? project.acf.stack.split(',').map((s: string) => s.trim()) : [];
-            const fallbackImage = 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=1000&auto=format&fit=crop';
+            const fallbackImage = '/ade-logo.png';
             return {
                 id: project.id,
                 title: project.title?.rendered || 'Untitled Project',

@@ -170,24 +170,48 @@ document.addEventListener('DOMContentLoaded', () => {
         initThemeToggle();
         renderAbout();
 
-        // Asynchronously fetch and render portfolio
-        if (projectsGridEl) {
-             projectsGridEl.innerHTML = `<p class="loading-message">Loading projects...</p>`;
-        }
-        
-        const projects = await fetchProjects();
-        renderPortfolio(projects);
-
-        if (projects.length > 0) {
-            initializeProjectViewer('#work', projects);
-            initCarousel(projects);
-        }
-
         // Set up animations for all elements after content is loaded
         setTimeout(() => {
             document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         }, 0);
-        
+
+        // --- Performance: lazy-load Projects (below-the-fold) ---
+        let projectsLoaded = false;
+        const loadProjects = async () => {
+            if (projectsLoaded || !projectsGridEl) return;
+            projectsLoaded = true;
+            projectsGridEl.innerHTML = `<p class="loading-message">Loading projects...</p>`;
+
+            const projects = await fetchProjects();
+            renderPortfolio(projects);
+
+            if (projects.length > 0) {
+                initializeProjectViewer('#work', projects);
+                initCarousel(projects);
+            }
+        };
+
+        if (workSection) {
+            const workObserver = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadProjects();
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -150px 0px' });
+
+            workObserver.observe(workSection);
+
+            // If user deep-links to #work, load immediately
+            if (window.location.hash.startsWith('#work')) {
+                loadProjects();
+            }
+        } else {
+            // fallback: attempt to load once (defensive)
+            loadProjects();
+        }
+
         // General event listeners
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) header?.classList.add('scrolled');
@@ -200,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (href && href.length > 1) {
                     const targetId = href.substring(1);
                     const targetElement = document.getElementById(targetId);
-                    
+
                     if (targetElement) {
                         e.preventDefault();
                         targetElement.scrollIntoView({

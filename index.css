@@ -256,6 +256,12 @@ html[data-theme='dark'] .tech-item {
 .services-section, .projects-section, .contact-section { padding: 4rem 0; }
 .about-section { padding: 2.5rem 0; background: linear-gradient(180deg, var(--bg-secondary), rgba(var(--bg-body-rgb),0.98)); border-block: 1px solid var(--border); }
 .section-header { margin-bottom: 3rem; }
+
+/* Performance: avoid painting offscreen sections until needed */
+.services-section, .projects-section, .about-snippet-section, .marquee-container {
+    content-visibility: auto;
+    contain-intrinsic-size: 300px;
+}
 .section-subtitle { font-family: var(--font-mono); color: var(--accent); font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
 .section-title { font-size: 2rem; letter-spacing: -0.03em; }
 
