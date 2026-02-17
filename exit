@@ -1,0 +1,89 @@
+[33mcommit cffe49e01dcdb0f75e0b688e0807298d65aa9f85[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Tue Feb 17 12:55:36 2026 +0100
+
+    removed corrupted build files
+
+[33mcommit 8aa0f0ec5fffee683aff002d6fe818b2a7350061[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Tue Feb 17 12:25:29 2026 +0100
+
+    chore: remove outputDirectory so Vercel detects Next.js
+
+[33mcommit 6301089e68c7820c5920f6b3f6858cb11b5c124e[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Tue Feb 17 12:08:33 2026 +0100
+
+    chore: remove outputDirectory so Vercel detects Next.js
+
+[33mcommit d659588f5676a7e52d35f8ce447a25c4ae74e835[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Tue Feb 17 11:54:01 2026 +0100
+
+    fixed type-check issue in hero tsx file
+
+[33mcommit d72a586b4870f7ec5027dfb7583b375abfbf86dc[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Tue Feb 17 11:43:24 2026 +0100
+
+    fixed type-check issue in hero tsx file
+
+[33mcommit 9b076f7fbb4a8f690340af509ce052aea7b60f14[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Tue Feb 17 11:23:35 2026 +0100
+
+    update schema and hirepa pagege link-in
+
+[33mcommit 763a8aedb3b9f81992fe92ec566a06871f4e9a11[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Tue Feb 17 10:50:28 2026 +0100
+
+    added site schema
+
+[33mcommit 2a2251ca588ae0820fbebb7a861c375b563fc2e1[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Sat Feb 14 08:34:56 2026 +0100
+
+    fix(hero): remove stray character in HeroCanvas
+
+[33mcommit ad1191a36a821d705ba4dda31f1c78af376f2c8c[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Sat Feb 14 08:27:54 2026 +0100
+
+    chore(images): add optimized AVIF/WebP responsive images
+
+[33mcommit 12888f3c37a49ae87db4d644179e186017f00cc6[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Sat Feb 14 08:22:42 2026 +0100
+
+    chore: remove legacy static files (migrated to Next app)
+
+[33mcommit eba14dcb329ad6b5bd9f926343fad65b8b69aeea[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Fri Feb 13 23:26:11 2026 +0100
+
+    added a dedicated about page
+
+[33mcommit 78d04040064fb3ce7d1824e69a92d901ccdc3737[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Mon Feb 9 15:45:38 2026 +0100
+
+    updated the about details
+
+[33mcommit 9b7291ab4040bb02260aa9ffcdc2885a62240a37[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Mon Feb 9 15:37:44 2026 +0100
+
+    updated the about details
+
+[33mcommit 7259fba70002072a1d2932ef0f12ed8d7f0a57dd[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Wed Feb 4 10:57:48 2026 +0100
+
+    added favicon image
+
+[33mcommit 01dde5c3e25f0b97c52c6e815bc659440dbb99c4[m
+Author: lagostechB0Y <biodunziik@yahoo.com>
+Date:   Sat Jan 24 06:25:01 2026 +0100
+
+    modified the project modal

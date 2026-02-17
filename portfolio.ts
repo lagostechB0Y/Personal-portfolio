@@ -31,16 +31,20 @@ if (!API_BASE_URL) {
  * @returns A promise that resolves to an array of Project objects.
  **/
 export async function fetchProjects(): Promise<Project[]> {
+    const CACHE_KEY = 'ltb_projects_v1';
+
     try {
+        if (!API_BASE_URL) throw new Error('VITE_WP_API_URL is not defined');
+
         // Use _embed to include featured image data in the same request
-        const response = await fetch(`${API_BASE_URL}/wp/v2/project?_embed=true`);
+        const response = await fetch(`${API_BASE_URL}/wp/v2/project?_embed=true`, { cache: 'no-store' });
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const rawProjects = await response.json();
         
         // Map the raw API data to the cleaner Project interface
-        return rawProjects.map((project: any): Project => {
+        const projects: Project[] = rawProjects.map((project: any): Project => {
             // Use ACF short_description for card, ACF description for modal, stack as in old portfolio
             const shortDesc = project.acf?.short_description || project.excerpt?.rendered?.replace(/<[^>]*>?/gm, '').trim() || '';
             const fullDesc = project.acf?.description || project.content?.rendered || '<p>No description available.</p>';
@@ -59,9 +63,27 @@ export async function fetchProjects(): Promise<Project[]> {
                 }
             };
         });
+
+        // Cache the results locally for instant next-load rendering
+        try { localStorage.setItem(CACHE_KEY, JSON.stringify(projects)); } catch (e) { /* ignore */ }
+
+        return projects;
     } catch (error) {
         console.error("Failed to fetch projects:", error);
-        return []; // Return an empty array on failure to prevent app crash
+
+        // Try cached projects from localStorage
+        try {
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (cached) {
+                console.warn('Using cached projects from localStorage');
+                return JSON.parse(cached) as Project[];
+            }
+        } catch (e) {
+            /* ignore */
+        }
+
+        // No demo fallback configured — return empty array so caller shows error state.
+        return [];
     }
 }
 

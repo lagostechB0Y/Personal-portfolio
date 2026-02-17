@@ -180,6 +180,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const loadProjects = async () => {
             if (projectsLoaded || !projectsGridEl) return;
             projectsLoaded = true;
+
+            const CACHE_KEY = 'ltb_projects_v1';
+
+            // 1) If we have a cached copy, render it immediately for instant paint
+            try {
+                const cachedRaw = localStorage.getItem(CACHE_KEY);
+                if (cachedRaw) {
+                    const cached = JSON.parse(cachedRaw) as Project[];
+                    renderPortfolio(cached);
+                    initializeProjectViewer('#work', cached);
+                    initCarousel(cached);
+
+                    // Stale-while-revalidate: fetch remote in background and update if different
+                    const remote = await fetchProjects();
+                    if (JSON.stringify(remote) !== JSON.stringify(cached)) {
+                        renderPortfolio(remote);
+                        initializeProjectViewer('#work', remote);
+                        initCarousel(remote);
+                    }
+                    return;
+                }
+            } catch (e) {
+                // ignore cache read/parsing errors and continue to fetch
+            }
+
+            // 2) No cache available — show loading UI while we fetch live data
             projectsGridEl.innerHTML = `<p class="loading-message">Loading projects...</p>`;
 
             const projects = await fetchProjects();
@@ -203,10 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             workObserver.observe(workSection);
 
-            // If user deep-links to #work, load immediately
-            if (window.location.hash.startsWith('#work')) {
-                loadProjects();
-            }
+            // EAGER LOAD: fetch projects immediately on page load (was lazy-loaded only when section intersected)
+            // This is idempotent because `loadProjects()` guards against duplicate calls.
+            loadProjects();
         } else {
             // fallback: attempt to load once (defensive)
             loadProjects();
